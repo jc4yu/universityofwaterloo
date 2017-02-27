@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Geog 483 Leaflet Tutorial</title>
+	<!-- This tutorial is based on the official Leaflet quickstart: http://leafletjs.com/examples/quick-start/ -->
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+
+</head>
+<body>
+
+<style>
+    	body { margin:0; padding:0; }
+    	#mapid { position:absolute; top:75px; bottom:75px; left:75px; width:620px; height:620px;}
+</style>
+
+<div id="mapid"</div>
+<script>
+
+	var mymap = L.map('mapid').setView([43.480, -80.51], 12);
+	
+	L.tileLayer("http://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, '
+	}).addTo(mymap);
+		
+	L.marker([43.4725773, -80.5442546]).addTo(mymap)
+		.bindPopup('<a href="http://www.adm.uwaterloo.ca/vtour/images/tour/buildings/DC.jpg"><b>Davis Centre (UW Library)</b></a><br />Ring Rd, Waterloo, ON N2L 3G1').openPopup();
+		
+	L.marker([43.4516402, -80.4925675]).addTo(mymap)
+		.bindPopup('<a href="https://www.kitchener.ca/uploads/634934100466971703_Final.jpg"><b>Kitchener City Hall</b></a><br />200 King St W, Kitchener, ON N2G 4G7').openPopup();
+		
+	L.marker([43.5171168, -80.5148056]).addTo(mymap)
+		.bindPopup('<a href="http://duhoccanada.org.vn/wp-content/uploads/2017/01/blackberry-waterloo.jpg"><b>BlackBerry Limited</b></a><br />RIM B, 2200 University Ave E, Waterloo, ON N2K 0A2').openPopup();
+		
+	L.marker([43.4984369, -80.53348]).addTo(mymap)
+		.bindPopup('<a href="https://noodl3cups4days.files.wordpress.com/2014/10/img_0396-2.jpg"><b>Conestoga Mall</b></a><br />550 King St N, Waterloo, ON N2L 5W6').openPopup();
+
+	L.marker([43.466, -80.53]).addTo(mymap)
+		.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+		
+</script>
+
+
+
+</body>
+</html>
